@@ -1,9 +1,6 @@
 image:
     file: .gitpod.Dockerfile
 
-# List the ports you want to expose and what to do when they are served. See https://www.gitpod.io/docs/43_config_ports/
-ports:
-    - port: 3000
 github:
     prebuilds:
         # enable for the master/default branch (defaults to true)
@@ -25,9 +22,10 @@ github:
 # List the start up tasks. You can start them in parallel in multiple terminals. See https://www.gitpod.io/docs/44_config_start_tasks/
 tasks:
     - init: echo 'this is Rust practics ' # runs during prebuild
-      command: echo 'rust embedded cortex-m tutorial' && sudo apt update && sudo apt-get -y install tree iputils-ping qemu-system-aarch64
+      command: echo 'rust embedded cortex-m tutorial' && sudo apt update && sudo apt-get -y install tree iputils-ping qemu-system-aarch64 qemu-system-arm
       
 # CodingCoffee  rust GitPod Examples more courses : http://www.codingcoffee.org
+# List the ports you want to expose and what to do when they are served. See https://www.gitpod.io/docs/43_config_ports/
 ports:
   - port: 3000
     onOpen: open-preview
