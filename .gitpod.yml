@@ -25,8 +25,8 @@ github:
 # List the start up tasks. You can start them in parallel in multiple terminals. See https://www.gitpod.io/docs/44_config_start_tasks/
 tasks:
     - init: echo 'this is Rust practics ' # runs during prebuild
-      command: echo 'rust embedded cortex-m tutorial' && sudo apt update && sudo apt-get -y install tree iputils-ping qemu-system-aarch64 qemu-system-arm
- 
+      command: echo 'rust embedded cortex-m tutorial' && sudo apt update && sudo apt-get -y install tree iputils-ping qemu-system-aarch64
+      
 # CodingCoffee  rust GitPod Examples more courses : http://www.codingcoffee.org
 ports:
   - port: 3000
