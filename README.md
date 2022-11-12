@@ -1,28 +1,15 @@
-# Rust important reference 
+# Rust embedded important reference 
 
+https://doc.rust-lang.org/stable/embedded-book/intro/index.html
 
-https://askeing.github.io/rust-book/README.html
+https://github.com/rust-embedded/cortex-m-quickstart
 
-https://opensourcedoc.com/rust-programming/
+##  cortex-m tutorial 
 
-https://github.com/rust-lang/rust-by-example
-
-## Rust in Linux Kernel 
-https://hackmd.io/@linD026/rust-in-linux-organize
+please check note.md
 
 # Gitpod Rust Tutorial 
 
 ref : https://www.tutorialspoint.com/rust/index.htm
 
-## mathlang , through this project , to demo how to use cargo 
-./src    
-
-## tutorial 
-./tutorial 
-
-## MathLang from Gitpod 
-[![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/JesterOrNot/MathLang) 
-
-Basic maths language
-
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/JesterOrNot/MathLang)
+# more courses : www.codingcoffee.org

@@ -1,23 +1,40 @@
-#  Rust Basic Tutorial and Mathlang Cargo Example
+#  Rust embedded cortex-m Tutorial 
 
-ref : https://www.tutorialspoint.com/rust/index.htm
+cargo install cargo-generate
 
-ref : https://github.com/JesterOrNot/mathlang
+cargo generate --git https://github.com/rust-embedded/cortex-m-quickstart
 
-ref : https://www.gitpod.io/docs/languages/rust
+cd app 
 
-ref : https://web.mit.edu/rust-lang_v1.25/arch/amd64_ubuntu1404/share/doc/rust/html/book/first-edition/README.html
+## another way 
 
-ref : https://doc.rust-lang.org/rust-by-example/index.html
+curl -LO https://github.com/rust-embedded/cortex-m-quickstart/archive/master.zip
+unzip master.zip
+mv cortex-m-quickstart-master app
+cd app
 
-ref : https://github.com/rust-lang/rust-by-example
+##  Compiler Steps 
 
-ref : https://askeing.github.io/rust-book/README.html  (chinese )
+tail -n6 .cargo/config.toml
 
-ref : https://github.com/TheAlgorithms/Rust.git
 
-## mathlang usage
+cargo build --target thumbv7m-none-eabi
 
-mathlang ./mathlang_script_examples/hello.mlang 
+cargo build 
 
-mathlang ./mathlang_script_examples/test.mlang 
+##  hello world 
+cargo build --example hello
+
+### use qemu to verify image 
+qemu-system-arm -cpu cortex-m3 -machine lm3s6965evb -nographic -semihosting-config enable=on,target=native -kernel target/thumbv7m-none-eabi/debug/examples/hello
+
+
+## use qemu to debug 
+
+qemu-system-arm -cpu cortex-m3 -machine lm3s6965evb -nographic -semihosting-config enable=on,target=native -gdb tcp::3333 -S  -kernel target/thumbv7m-none-eabi/debug/examples/hello
+
+## launch gdb 
+gdb-multiarch -q target/thumbv7m-none-eabi/debug/examples/hello
+
+### in gdb 
+target remote :3333
