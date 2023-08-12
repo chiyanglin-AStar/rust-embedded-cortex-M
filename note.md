@@ -17,6 +17,7 @@ cd app
 
 tail -n6 .cargo/config.toml
 
+rustup target add thumbv7m-none-eabi
 
 cargo build --target thumbv7m-none-eabi
 
@@ -27,7 +28,6 @@ cargo build --example hello
 
 ### use qemu to verify image 
 qemu-system-arm -cpu cortex-m3 -machine lm3s6965evb -nographic -semihosting-config enable=on,target=native -kernel target/thumbv7m-none-eabi/debug/examples/hello
-
 
 ## use qemu to debug 
 
